@@ -38,10 +38,10 @@
                                 <input type="hidden" name="geolocation"/>
 
                                 <section class="cas-field form-group my-3 mdc-input-group">
-                                    <div class="mdc-input-group-field mdc-input-group-field-append">
-                                        <div class="d-flex caps-check">
+                                    <div class="mdc-input-group-field">
+                                        <div class="d-flex">
                                             <label for="token"
-                                                   class="mdc-text-field mdc-text-field--outlined control-label mdc-text-field--with-trailing-icon">
+                                                   class="mdc-text-field mdc-text-field--outlined control-label">
                                                 <span class="mdc-notched-outline">
                                                     <span class="mdc-notched-outline__leading"></span>
                                                     <span class="mdc-notched-outline__notch">
@@ -50,21 +50,16 @@
                                                     </span>
                                                     <span class="mdc-notched-outline__trailing"></span>
                                                 </span>
-                                                <input class="mdc-text-field__input form-control pwd"
-                                                       type="password"
+                                                <input class="mdc-text-field__input form-control"
+                                                       type="text"
                                                        name="token"
                                                        id="token"
                                                        size="25"
                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                                                        required
-                                                       autocomplete="off"/>
+                                                       autocomplete="one-time-code"
+                                                       inputmode="numeric"/>
                                             </label>
-                                            <button class="reveal-password align-self-end mdc-button mdc-button--raised btn btn-primary mdc-input-group-append mdc-icon-button"
-                                                    tabindex="-1"
-                                                    type="button">
-                                                <i class="mdi mdi-eye fas fa-eye reveal-password-icon" aria-hidden="true"></i>
-                                                <span class="visually-hidden">Toggle Token</span>
-                                            </button>
                                         </div>
                                         <div th:if="${confirmationType == 'create'}">
                                             <br>
